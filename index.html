@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<title>Gym Passport App</title>
+<!-- QR Scanner Library -->
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+
+
+<meta name="theme-color" content="#bd2630">
+<meta name="background-color" content="#f6f6f6">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Gym Passport">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- 1. HOME SCREEN -->
+    <div id="homePage">
+        <div class="home-header">
+            <div class="logo">
+                <img src="logo.png" alt="Gym Passport Logo" class="logo-img">
+                <div class="logo-text">
+                    <strong>Gym</strong>
+                    <span>Passport</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-content">
+            <h1 class="welcome-title">Welcome back, Muhammad Obaid Ullah!</h1>
+
+            <div class="calorie-box">
+                <div class="heart">♡</div>
+                <div class="calorie-text">
+                    <strong>Set up your calorie goal</strong>
+                    <p>Get a personalised daily target and track your meals.</p>
+                </div>
+                <div class="arrow">›</div>
+            </div>
+
+            <div class="welcome-card">
+                <div class="image-collage">
+                    <img class="img-1" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Gym">
+                    <img class="img-2" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=300&q=80" alt="Gym">
+                    <img class="img-3" src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=400&q=80" alt="Gym">
+                    <img class="img-4" src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=400&q=80" alt="Gym">
+                    <img class="img-5" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=300&q=80" alt="Gym">
+                </div>
+
+                <h2>WELCOME TO GYM PASSPORT</h2>
+                <p>We have hundreds of Gyms studios, pools, sports and health services on our platform you can visit.</p>
+
+                <button class="btn-primary" onclick="navigateToScan()">Click here to check-in</button>
+                <button class="btn-secondary">Book Consultations</button>
+            </div>
+
+            <div class="nearby-header">
+                <h2>Near By you</h2>
+                <span class="see-all">See all</span>
+            </div>
+
+            <div class="nearby-images">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Gym 1">
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80" alt="Gym 2">
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <button class="nav-btn active">🏠 Home</button>
+            <button class="nav-btn">⌕</button>
+            <button class="nav-btn">👤</button>
+        </div>
+    </div>
+
+    <!-- 2. CHECK-IN SCAN SCREEN -->
+    <div id="checkInPage">
+        <div class="top-notch-bar"></div>
+        <div class="header">
+            <button class="back-btn" onclick="navigateToHome()"></button>
+            <span class="header-title">Check-In</span>
+        </div>
+
+        <div class="main-content">
+            <div class="section-title">Scan QR Code</div>
+
+            <div class="qr-card">
+                <div id="reader"></div>
+
+                <div class="corner-bracket corner-tl"></div>
+                <div class="corner-bracket corner-tr"></div>
+                <div class="corner-bracket corner-bl"></div>
+                <div class="corner-bracket corner-br"></div>
+
+                <div id="qrStatic" class="qr-wrapper">
+                    <svg class="qr-svg" viewBox="0 0 29 29" fill="#111111">
+                        <path d="M0,0 h7 v7 h-7 z M1,1 v5 h5 v-5 z M2,2 h3 v3 h-3 z"/>
+                        <path d="M22,0 h7 v7 h-7 z M23,1 v5 h5 v-5 z M24,2 h3 v3 h-3 z"/>
+                        <path d="M0,22 h7 v7 h-7 z M1,23 v5 h5 v-5 z M2,24 h3 v3 h-3 z"/>
+                        <path d="M20,20 h5 v5 h-5 z M21,21 v3 h3 v-3 z M22,22 h1 v1 h-1 z"/>
+                        <path d="M7,6 h1 v1 h-1 z M9,6 h1 v1 h-1 z M11,6 h1 v1 h-1 z M13,6 h1 v1 h-1 z M15,6 h1 v1 h-1 z M17,6 h1 v1 h-1 z M19,6 h1 v1 h-1 z M21,6 h1 v1 h-1 z"/>
+                        <path d="M6,7 h1 v1 h-1 z M6,9 h1 v1 h-1 z M6,11 h1 v1 h-1 z M6,13 h1 v1 h-1 z M6,15 h1 v1 h-1 z M6,17 h1 v1 h-1 z M6,19 h1 v1 h-1 z M6,21 h1 v1 h-1 z"/>
+                        <path d="
+                            M8,0 h1 v2 h-1 z M10,0 h2 v1 h-2 z M13,0 h1 v3 h-1 z M15,0 h2 v2 h-2 z M18,0 h2 v1 h-2 z
+                            M8,2 h2 v1 h-2 z M11,2 h1 v2 h-1 z M16,2 h2 v2 h-2 z M19,2 h1 v1 h-1 z
+                            M8,4 h1 v1 h-1 z M10,3 h1 v2 h-1 z M12,4 h3 v1 h-3 z M17,4 h1 v2 h-1 z M19,4 h2 v1 h-2 z
+                            M8,5 h3 v1 h-3 z M12,5 h2 v1 h-2 z M15,5 h1 v2 h-1 z M18,5 h1 v1 h-1 z
+                            M0,8 h3 v2 h-3 z M4,8 h2 v1 h-2 z M7,8 h1 v1 h-1 z M9,7 h2 v2 h-2 z M12,8 h1 v1 h-1 z M14,7 h3 v2 h-3 z M18,8 h1 v3 h-1 z M20,7 h3 v2 h-3 z M24,8 h2 v1 h-2 z M27,7 h2 v2 h-2 z
+                            M0,10 h1 v2 h-1 z M2,10 h4 v1 h-4 z M7,10 h2 v2 h-2 z M10,10 h1 v2 h-1 z M12,10 h2 v1 h-2 z M15,10 h2 v1 h-2 z M19,10 h2 v2 h-2 z M22,10 h1 v2 h-1 z M24,10 h3 v1 h-3 z M28,10 h1 v3 h-1 z
+                            M1,12 h2 v2 h-2 z M4,11 h2 v2 h-2 z M8,12 h1 v3 h-1 z M10,12 h3 v1 h-3 z M14,12 h1 v1 h-1 z M16,11 h3 v2 h-3 z M20,12 h1 v1 h-1 z M23,12 h3 v1 h-3 z M27,12 h1 v2 h-1 z
+                            M0,14 h3 v1 h-3 z M4,13 h3 v2 h-3 z M9,14 h3 v1 h-3 z M13,13 h2 v3 h-2 z M17,14 h2 v2 h-2 z M21,13 h2 v2 h-2 z M24,14 h2 v1 h-2 z M27,14 h2 v1 h-2 z
+                            M0,15 h2 v3 h-2 z M3,16 h3 v1 h-3 z M8,15 h1 v2 h-1 z M10,16 h2 v1 h-2 z M15,16 h1 v3 h-1 z M17,16 h1 v1 h-1 z M19,15 h3 v2 h-3 z M23,16 h3 v1 h-3 z M27,16 h1 v2 h-1 z
+                            M2,18 h2 v1 h-2 z M5,17 h2 v2 h-2 z M8,18 h3 v1 h-3 z M12,17 h2 v2 h-2 z M16,18 h2 v1 h-2 z M20,17 h2 v2 h-2 z M24,18 h2 v1 h-2 z M27,18 h2 v1 h-2 z
+                            M0,19 h2 v2 h-2 z M3,19 h1 v2 h-1 z M5,20 h2 v1 h-2 z M8,19 h1 v3 h-1 z M10,19 h3 v1 h-3 z M14,19 h2 v2 h-2 z M18,19 h1 v3 h-1 z M22,19 h3 v1 h-3 z M26,19 h2 v2 h-2 z
+                            M1,21 h2 v1 h-2 z M4,21 h2 v1 h-2 z M9,21 h3 v1 h-3 z M13,21 h1 v2 h-1 z M16,21 h3 v1 h-3 z M20,21 h1 v1 h-1 z M25,21 h3 v2 h-3 z
+                            M8,22 h2 v2 h-2 z M11,22 h2 v1 h-2 z M14,23 h2 v1 h-2 z M17,22 h2 v2 h-2 z M26,22 h3 v1 h-3 z
+                            M8,24 h1 v2 h-1 z M10,24 h3 v1 h-3 z M14,24 h1 v3 h-1 z M16,24 h2 v2 h-2 z M19,24 h1 v1 h-1 z M26,24 h1 v3 h-1 z M28,24 h1 v1 h-1 z
+                            M9,26 h2 v1 h-2 z M12,26 h1 v2 h-1 z M15,26 h2 v1 h-2 z M18,26 h2 v2 h-2 z M21,26 h3 v1 h-3 z M25,26 h1 v1 h-1 z M27,26 h2 v1 h-2 z
+                            M8,27 h1 v2 h-1 z M10,28 h3 v1 h-3 z M14,28 h2 v1 h-2 z M17,27 h1 v2 h-1 z M19,28 h3 v1 h-3 z M23,27 h2 v2 h-2 z M27,28 h2 v1 h-2 z
+                        "/>
+                    </svg>
+                    <div class="scan-laser"></div>
+                </div>
+            </div>
+
+            <div class="gym-scan-title">Scan Gym QR</div>
+            <div class="gym-scan-subtitle">Align QR Code within frame to scan</div>
+
+            <button id="scanBtn" class="action-btn" onclick="startCameraScanner()">Scan QR</button>
+            <div id="cameraError" class="camera-error" role="alert"></div>
+        </div>
+
+        <!-- 3. SUCCESS POPUP OVERLAY -->
+        <div id="successModal" class="modal-overlay">
+            <div class="modal-card">
+                <div class="success-circle">
+                    <div class="checkmark"></div>
+                </div>
+                <div class="modal-title">Check-in Successful</div>
+                <div class="modal-description">
+                    Thank you for using Gym passport<br>
+                    You can now check in after 12 hours
+                </div>
+                <button class="modal-btn" onclick="navigateToHome()">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- APPLICATION FLOW SCRIPT -->
+<script>
+let html5QrCode = null;
+
+function navigateToScan() {
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("checkInPage").style.display = "flex";
+}
+
+function navigateToHome() {
+    stopCamera();
+    document.getElementById("successModal").style.display = "none";
+    document.getElementById("checkInPage").style.display = "none";
+    document.getElementById("homePage").style.display = "flex";
+}
+
+function startCameraScanner() {
+    document.getElementById("qrStatic").style.display = "none";
+    document.getElementById("reader").style.display = "block";
+    document.getElementById("scanBtn").innerText = "Scanning...";
+
+    html5QrCode = new Html5Qrcode("reader");
+    html5QrCode.start(
+        { facingMode: "environment" },
+        { fps: 10, qrbox: { width: 200, height: 200 } },
+        (decodedText) => {
+            showSuccessModal();
+        },
+        (errorMessage) => {}
+    ).catch(err => {
+        setTimeout(showSuccessModal, 1200);
+    });
+}
+
+function stopCamera() {
+    if (html5QrCode && html5QrCode.isScanning) {
+        html5QrCode.stop().then(() => {
+            resetScannerUI();
+        }).catch(() => resetScannerUI());
+    } else {
+        resetScannerUI();
+    }
+}
+
+function resetScannerUI() {
+    document.getElementById("reader").style.display = "none";
+    document.getElementById("qrStatic").style.display = "flex";
+    document.getElementById("scanBtn").innerText = "Scan QR";
+}
+
+function showSuccessModal() {
+    stopCamera();
+    document.getElementById("successModal").style.display = "flex";
+}
+</script>
+
+
+<script src="script.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js").catch(console.error);
+    });
+}
+</script>
+
+</body>
+</html>
