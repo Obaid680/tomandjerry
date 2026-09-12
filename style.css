@@ -614,3 +614,38 @@ button, a {
     }
 }
 \n\n/* ===== FINAL Mi 11 Ultra responsive tuning ===== */\n/* Use the actual viewport, not a simulated 390x844 phone frame. */\nbody { min-height: 100dvh; height: 100dvh; }\n.app-container { width: 100vw !important; max-width: none !important; height: 100dvh !important; min-height: 100dvh !important; }\n\n#homePage { height: 100dvh !important; min-height: 0; padding-bottom: calc(82px + env(safe-area-inset-bottom, 0px)); }\n.home-header { height: clamp(72px, 9.5dvh, 104px); padding: max(18px, env(safe-area-inset-top, 0px)) 20px 0; }\n.home-content { padding: clamp(16px, 2.4dvh, 26px) clamp(16px, 4vw, 28px); }\n.welcome-title { font-size: clamp(20px, 5.3vw, 25px); margin-bottom: clamp(12px, 2dvh, 18px); }\n.calorie-box { border-radius: 20px; padding: clamp(12px, 2dvh, 16px); margin-bottom: clamp(14px, 2.2dvh, 20px); }\n.heart { width: clamp(40px, 11vw, 48px); height: clamp(40px, 11vw, 48px); }\n.calorie-text strong { font-size: clamp(13px, 3.4vw, 16px); }\n.calorie-text p { font-size: clamp(11px, 2.9vw, 13px); }\n\n.welcome-card { border-radius: 22px; padding: clamp(14px, 2.2dvh, 20px) clamp(14px, 3.5vw, 20px) clamp(18px, 2.8dvh, 24px); margin-bottom: clamp(18px, 3dvh, 26px); }\n.image-collage { height: clamp(110px, 17dvh, 150px); margin-bottom: clamp(14px, 2.2dvh, 20px); }\n.image-collage img { height: 100%; }\n.welcome-card h2 { font-size: clamp(14px, 3.8vw, 17px); margin-bottom: 8px; }\n.welcome-card p { font-size: clamp(12px, 3.2vw, 14px); margin-bottom: clamp(14px, 2.2dvh, 20px); }\n.btn-primary, .btn-secondary { height: clamp(46px, 6.2dvh, 54px); font-size: clamp(13px, 3.5vw, 16px); }\n\n.nearby-header { margin-bottom: 10px; }\n.nearby-header h2 { font-size: clamp(14px, 3.8vw, 17px); }\n.see-all { font-size: clamp(11px, 2.8vw, 13px); }\n.nearby-images { gap: clamp(8px, 2vw, 12px); }\n.nearby-images img { height: clamp(100px, 14.5dvh, 135px); border-radius: 12px; }\n\n.bottom-nav { position: absolute !important; left: clamp(6px, 2vw, 16px) !important; right: clamp(6px, 2vw, 16px) !important; bottom: max(8px, env(safe-area-inset-bottom, 0px)) !important; width: auto !important; height: clamp(50px, 6.8dvh, 58px); }\n\n/* Check-in screen: scale vertically with tall phones. */\n#checkInPage { height: 100dvh !important; }\n.main-content { padding-top: clamp(22px, 4dvh, 42px); }\n.section-title { font-size: clamp(17px, 4.5vw, 20px); margin-bottom: clamp(20px, 3dvh, 30px); }\n.qr-card { width: min(72vw, 330px); height: min(72vw, 330px); margin-bottom: clamp(22px, 3dvh, 34px); }\n.gym-scan-title { font-size: clamp(18px, 4.8vw, 21px); }\n.gym-scan-subtitle { font-size: clamp(13px, 3.5vw, 15px); margin-bottom: clamp(20px, 3dvh, 32px); text-align: center; }\n.action-btn { width: min(82vw, 340px); height: clamp(48px, 6.5dvh, 54px); }\n\n@media (max-width: 390px) {\n  .home-content { padding-left: 14px; padding-right: 14px; }\n  .welcome-card { padding-left: 12px; padding-right: 12px; }\n}\n@media (min-width: 500px) {\n  .home-content { padding-left: 28px; padding-right: 28px; }\n  .home-header { padding-left: 28px; }\n  .welcome-card { max-width: 680px; margin-left: auto; margin-right: auto; }\n  .calorie-box, .nearby-header, .nearby-images { max-width: 680px; margin-left: auto; margin-right: auto; }\n}\n
+/* FINAL FULL-SCREEN MOBILE LAYOUT */
+*,*::before,*::after{box-sizing:border-box}
+html,body{width:100%;height:100%;min-width:0;margin:0;padding:0;overflow:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-height:100dvh;display:block}
+.app-container{position:relative!important;width:100vw!important;max-width:none!important;min-width:0!important;height:100dvh!important;min-height:100dvh!important;max-height:none!important;margin:0!important;padding:0!important;border-radius:0!important;overflow:hidden!important}
+.home-page,.checkin-page{position:relative;width:100%!important;min-width:0!important;max-width:none!important;height:100dvh!important;min-height:100dvh!important;max-height:none!important;overflow:hidden!important}
+.home-page{display:flex!important;flex-direction:column!important}
+.home-header{flex:0 0 auto!important;width:100%!important;padding-top:max(10px,env(safe-area-inset-top,0px))!important}
+.main-content{flex:1 1 auto!important;width:100%!important;min-height:0!important;height:auto!important;max-height:none!important;overflow-y:auto!important;overflow-x:hidden!important;padding-bottom:115px!important;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.main-content::-webkit-scrollbar{display:none}
+.qr-card{width:min(76vw,360px)!important;height:min(76vw,360px)!important;max-width:calc(100vw - 36px)!important;max-height:calc(100vw - 36px)!important}
+.action-btn{width:calc(100% - 32px)!important;max-width:430px!important;min-height:52px!important}
+.bottom-nav{position:absolute!important;left:0!important;right:0!important;bottom:0!important;z-index:1000!important;width:100%!important;max-width:none!important;margin:0!important;padding-bottom:max(8px,env(safe-area-inset-bottom,0px))!important}
+.checkin-page{display:flex!important;flex-direction:column!important}
+.checkin-header{flex:0 0 auto!important;width:100%!important;padding-top:max(10px,env(safe-area-inset-top,0px))!important}
+.scanner-section{flex:1 1 auto!important;width:100%!important;min-height:0!important;max-height:none!important;overflow:hidden!important;display:flex!important;align-items:center!important;justify-content:center!important}
+#reader{width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;min-width:0!important;min-height:0!important;overflow:hidden!important;background:#111!important}
+#reader video,#reader__scan_region,#reader__scan_region video{width:100%!important;height:100%!important}
+#reader video{object-fit:cover!important}
+#reader__dashboard,#reader__dashboard_section,#reader__header_message{display:none!important}
+button,a,input,select,textarea{touch-action:manipulation}
+button,input,select,textarea{font-size:16px}
+@media (min-width:430px) and (max-width:700px){
+ .main-content{padding-left:12px!important;padding-right:12px!important;padding-bottom:115px!important}
+ .qr-card{width:min(70vw,370px)!important;height:min(70vw,370px)!important}
+ .action-btn{width:min(88vw,450px)!important}
+}
+@media (max-height:760px){
+ .main-content{padding-bottom:105px!important}
+ .qr-card{width:min(60vw,280px)!important;height:min(60vw,280px)!important}
+}
+@media (orientation:landscape) and (max-height:600px){
+ .main-content{padding-bottom:80px!important}
+ .qr-card{width:min(42vh,260px)!important;height:min(42vh,260px)!important}
+}
