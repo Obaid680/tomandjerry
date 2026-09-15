@@ -676,3 +676,146 @@ button {
     height: min(48vh, 300px);
   }
 }
+
+
+/* =========================================================
+   SCREEN-FIT PATCH
+   Fills the tall Mi 11 Ultra viewport like the reference
+   layout instead of leaving a large empty lower area.
+   ========================================================= */
+
+/* Use the whole available vertical area, while allowing
+   the content to scroll if the screen is shorter. */
+#homePage {
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+}
+
+.home-content {
+  min-height: calc(100dvh - var(--home-header-height, 92px)) !important;
+  padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+/* Larger, balanced vertical proportions on tall phones. */
+.welcome-title {
+  margin-bottom: 18px !important;
+}
+
+.calorie-box {
+  min-height: clamp(82px, 10.5dvh, 112px) !important;
+  margin-bottom: 18px !important;
+}
+
+.welcome-card {
+  padding: clamp(16px, 3.5vw, 26px) !important;
+  margin-bottom: 24px !important;
+}
+
+.image-collage {
+  height: clamp(155px, 23dvh, 245px) !important;
+  margin-bottom: 20px !important;
+}
+
+.welcome-card h2 {
+  font-size: clamp(18px, 4.6vw, 27px) !important;
+  margin-bottom: 10px !important;
+}
+
+.welcome-card p {
+  font-size: clamp(14px, 3.7vw, 19px) !important;
+  line-height: 1.42 !important;
+  margin-bottom: 18px !important;
+}
+
+.btn-primary,
+.btn-secondary {
+  min-height: clamp(52px, 7dvh, 64px) !important;
+}
+
+.nearby-header {
+  margin-bottom: 14px !important;
+}
+
+.nearby-images {
+  min-height: clamp(190px, 25dvh, 260px) !important;
+}
+
+.nearby-images img {
+  min-height: clamp(190px, 25dvh, 260px) !important;
+}
+
+/* Mi 11 Ultra-sized CSS viewport: keep the content visually
+   proportional to the tall screen. */
+@media (min-width: 390px) and (min-height: 800px) {
+  .home-header {
+    height: clamp(86px, 11dvh, 108px) !important;
+  }
+
+  .home-content {
+    padding-top: clamp(18px, 2.4dvh, 26px) !important;
+  }
+
+  .welcome-title {
+    font-size: clamp(23px, 5.5vw, 30px) !important;
+  }
+
+  .calorie-box {
+    min-height: clamp(86px, 10dvh, 108px) !important;
+  }
+
+  .welcome-card {
+    min-height: clamp(470px, 54dvh, 620px) !important;
+  }
+
+  .image-collage {
+    height: clamp(165px, 21dvh, 225px) !important;
+  }
+
+  .nearby-images {
+    min-height: clamp(190px, 23dvh, 250px) !important;
+  }
+
+  .nearby-images img {
+    min-height: clamp(190px, 23dvh, 250px) !important;
+  }
+}
+
+/* Very tall displays: expand the welcome card rather than
+   leaving the lower half visually empty. */
+@media (min-height: 900px) {
+  .welcome-card {
+    min-height: 56dvh !important;
+  }
+
+  .image-collage {
+    height: 22dvh !important;
+  }
+
+  .nearby-images,
+  .nearby-images img {
+    min-height: 24dvh !important;
+  }
+}
+
+/* Short phones: don't force oversized cards. */
+@media (max-height: 760px) {
+  .welcome-card {
+    min-height: auto !important;
+  }
+
+  .image-collage {
+    height: 22vw !important;
+    min-height: 125px !important;
+  }
+
+  .nearby-images,
+  .nearby-images img {
+    min-height: 170px !important;
+  }
+}
+
+/* Keep the scanner page full-screen independently of home sizing. */
+#checkInPage {
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+}

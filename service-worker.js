@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gym-passport-v4-mi11';
+const CACHE_NAME = 'gym-passport-v5-screenfit';
 const APP_SHELL = [
     "./",
     "./index.html",
